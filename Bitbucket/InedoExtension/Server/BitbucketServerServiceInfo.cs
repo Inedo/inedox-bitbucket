@@ -2,11 +2,11 @@
 
 namespace Inedo.Extensions.Bitbucket.Server;
 
-[DisplayName("Bitbucket Server/Data Center")]
+[DisplayName("Bitbucket Server")]
 [Description("Provides integration for Bitbucket Server or Data Center repositories.")]
 public sealed class BitbucketServerServiceInfo : GitService<BitbucketServerRepository, BitbucketAccount>
 {
-    public override string ServiceName => "Bitbucket Server/Data Center";
+    public override string ServiceName => "Bitbucket Server";
     public override string NamespaceDisplayName => "Project";
     public override string PasswordDisplayName => "Password or token";
     public override string ApiUrlDisplayName => "Server URL";
