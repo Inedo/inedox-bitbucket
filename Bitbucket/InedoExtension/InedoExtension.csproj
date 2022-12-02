@@ -9,6 +9,6 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Inedo.SDK" Version="2.2.0-ci.54" />
+    <PackageReference Include="Inedo.SDK" Version="2.2.0" ExcludeAssets="runtime" />
   </ItemGroup>
 </Project>
