@@ -12,13 +12,13 @@ public sealed class BitbucketServerServiceInfo : GitService<BitbucketServerRepos
     public override string ApiUrlDisplayName => "Server URL";
     public override string ApiUrlPlaceholderText => "https://my-bitbucket-server/";
 
-    public override async IAsyncEnumerable<string> GetNamespacesAsync(GitServiceCredentials credentials, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    protected override async IAsyncEnumerable<string> GetNamespacesAsync(BitbucketAccount credentials, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var client = new BitbucketServerClient(credentials);
         await foreach (var p in client.GetProjectsAsync(cancellationToken).ConfigureAwait(false))
             yield return p.Name!;
     }
-    public override async IAsyncEnumerable<string> GetRepositoryNamesAsync(GitServiceCredentials credentials, string serviceNamespace, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    protected override async IAsyncEnumerable<string> GetRepositoryNamesAsync(BitbucketAccount credentials, string serviceNamespace, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var client = new BitbucketServerClient(credentials);
         var project = await client.GetProjectByNameAsync(serviceNamespace, cancellationToken).ConfigureAwait(false);
