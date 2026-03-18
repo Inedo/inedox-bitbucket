@@ -3,12 +3,12 @@
     <OutputType>Library</OutputType>
     <AssemblyName>Bitbucket</AssemblyName>
     <RootNamespace>Inedo.Extensions.Bitbucket</RootNamespace>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Inedo.SDK" Version="3.1.0" ExcludeAssets="runtime" />
+    <PackageReference Include="Inedo.SDK" Version="4.0.0-ci.7" ExcludeAssets="runtime" />
   </ItemGroup>
 </Project>
